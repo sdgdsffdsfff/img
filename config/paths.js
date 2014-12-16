@@ -6,7 +6,7 @@ module.exports = {
 	getPublic: __getPath.bind(null, 'public'),
 	getRoute: __getPath.bind(null, 'routes'),
 	getService: __getPath.bind(null, 'services'),
-	getView: __getPath.bind(null, 'views'),
+	getView: __getPath.bind(null, 'views')
 };
 
 function __getPath(pathRoot, partialPath) {

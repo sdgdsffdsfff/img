@@ -5,7 +5,7 @@ module.exports = function (width, height, callback) {
         , canvas = new Canvas(width, height)
         , ctx = canvas.getContext('2d');
 
-    ctx.fillStyle="#FF0000";
+    ctx.fillStyle="#ccc";
     ctx.fillRect(0,0,width,height);
 
 
