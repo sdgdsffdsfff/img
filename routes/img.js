@@ -24,6 +24,8 @@ function reportToGA(req, width, height) {
 module.exports = function (req, res) {
     var width = (req.params.width) ? parseInt(req.params.width) : undefined;
     var height = (req.params.height) ? parseInt(req.params.height) : width;
+    var bg = (req.params.bg) ? req.params.bg : 'ccc';
+    var fc = (req.params.fc) ? req.params.fc : '008600';
 
 
     if (!isInt(width) || !isInt(height)) {
@@ -38,7 +40,7 @@ module.exports = function (req, res) {
             return;
         }
 
-        img(width, height, function (err, svgString) {
+        img(width, height, bg, fc, function (err, svgString) {
             var cacheTime = 60 * 60 * 24 * 7; // 7 Days
             var expires = new Date(Date.now() + (cacheTime * 1000)).toUTCString();
 

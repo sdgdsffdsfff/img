@@ -25,6 +25,15 @@ module.exports = function(app, express) {
 	app.get('/:width([0-9]{1,})x:height([0-9]{1,})', require(GLOBAL.paths.getRoute('img')));
 	app.get('/:width([0-9]{1,})', require(GLOBAL.paths.getRoute('img')));
 
+	app.get('/:bg([0-9a-zA-z]{3,})/:fc([0-9a-zA-z]{3,})/:width([0-9]{1,})x:height([0-9]{1,})', require(GLOBAL.paths.getRoute('img')));
+
+	app.get('/:bg([0-9a-zA-z]{3,})/:width([0-9]{1,})x:height([0-9]{1,})', require(GLOBAL.paths.getRoute('img')));
+
+
+
+
+
+
 
 	return;
 };
