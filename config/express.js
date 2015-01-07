@@ -2,7 +2,7 @@
 
 module.exports = function(app, express) {
 
-	app.set('env', (process.env.NODE_ENV === 'development') ? 'development' : 'production');
+	app.set('env', 'production');
 
 
 	/*
@@ -23,7 +23,7 @@ module.exports = function(app, express) {
 	}
 	else {
 		app.use(errorHandler());
-		app.use(morgan());
+		app.use(morgan('dev'));
 	}
 
 	// all environments

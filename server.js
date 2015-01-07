@@ -59,7 +59,7 @@ if (cluster.isMaster) {
     console.log('[worker] ' + "start worker ..." + cluster.worker.id);
     app.listen(app.get('port'), function () {
         console.log('worker' + cluster.worker.id);
-        console.log(Date.now(), 'Express server listening on port ' + app.get('port') + ' in mode: ' + process.env.NODE_ENV);
+        console.log(Date.now(), 'Express server listening on port ' + app.get('port'));
     });
 }
 
