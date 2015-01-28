@@ -8,19 +8,6 @@ function isInt(n) {
 }
 
 
-function reportToGA(req, width, height) {
-    var referer = req.get('referer');
-    var ua = require('universal-analytics');
-    var uaUUID = (req.cookies && req.cookies.uaUUID) ? req.cookies.uaUUID : null;
-    var visitor = ua('UA-51384-17', uaUUID);
-
-    var dims = width + 'x' + height;
-
-    // Visitor#event(category, action, label, value)
-    visitor.event('hotlink', referer, dims).send();
-}
-
-
 module.exports = function (req, res) {
     var width = (req.params.width) ? parseInt(req.params.width) : undefined;
     var height = (req.params.height) ? parseInt(req.params.height) : width;
@@ -52,8 +39,6 @@ module.exports = function (req, res) {
 
             res.end(svgString);
 
-
-            process.nextTick(reportToGA.bind(null, req, width, height));
 
         });
     }
